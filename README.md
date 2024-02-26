@@ -75,8 +75,7 @@ The pretrained model of LSI-Net on the ??? dataset is available at [???](???)
 ```bash
 mkdir pretrained
 cd pretrained
-# put in the weights file here.
-cd ..
+# download the weights with the links below.
 ```
 
 ### Training
