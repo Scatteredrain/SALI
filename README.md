@@ -25,8 +25,8 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 
 ### Preliminaries
 
-- Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html))
-- [PyTorch >= 1.3](https://pytorch.org/)
+- Python >= 3.7 
+- [PyTorch >= 1.7](https://pytorch.org/)
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 
