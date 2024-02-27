@@ -3,7 +3,13 @@
 <h4>Long- and Short-term Temporal Interaction Network for Colonoscopy Video Polyp Segmentation</h4>
 
 
-<img src="./Figs/visual.gif" width="100%" />
+<p align="center">
+    <img src="./imgs/demo0.gif"/> <br />
+    <em> 
+    Figure 1: Qualitative results of LSI-Net.  
+    </em>
+</p>
+
 </div>
 </div>
 
