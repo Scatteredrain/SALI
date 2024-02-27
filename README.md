@@ -30,7 +30,7 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 
-1. Install dependencies for LSI-Net.
+#### 1. Install dependencies for LSI-Net.
 
 
 ```bash
@@ -46,9 +46,13 @@ cd lib/ops_align
 python setup.py build develop
 cd ../..
 ```
-Note: The version of mmcv-full to intall can follow [link](https://mmcv.readthedocs.io/en/latest/get_started/installation.html).
+Note: 
+- The version of mmcv-full to intall can follow [link](https://mmcv.readthedocs.io/en/latest/get_started/installation.html).
+      
+- More details about the cuda extensions for PDFA can be found in the work of [BasicSR](https://github.com/XPixelGroup/BasicSR)
+      
 
-2. Prepare the datasets for LSI-Net.
+#### 2. Prepare the datasets for LSI-Net.
 
 Please refer to [PNS+](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_DESCRIPTION.md) to get access to the SUN-SEG dataset, and download it to path `datasets/`. The path structure should be as follows:
 ```none
@@ -73,7 +77,7 @@ Please refer to [PNS+](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_DESCR
   ```
 
 
-3. Prepare the pre-trained weights for the backbone.
+#### 3. Prepare the pre-trained weights for the backbone.
 
 The pretrained model of LSI-Net on the ??? dataset is available at [???](???)
 
@@ -82,6 +86,7 @@ mkdir pretrained
 cd pretrained
 # download the weights with the links below.
 ```
+
 
 ### Training
 
@@ -98,7 +103,6 @@ python test_video_mem.py
 ###  Evaluating 
 
 Python: Please refer to the toolbox provided by [VPS](https://github.com/GewelsJI/VPS/tree/main/eval).
-
 
 ### Well trained model:
 You could download the trained model from ??? and put the model in directory `./snapshot`.
