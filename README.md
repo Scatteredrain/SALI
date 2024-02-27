@@ -4,7 +4,7 @@
 
 
 <p align="center">
-    <img src="./imgs/demo0.gif"/> <br />
+    <img src="demo.gif"/> <br />
     <em> 
     Figure 1: Qualitative results of LSI-Net.  
     </em>
