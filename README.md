@@ -4,7 +4,7 @@
 
 
 <p align="center">
-    <img src="demo.gif"/> <br />
+    <img src="imgs/demo.gif"/> <br />
     <em> 
     Figure 1: Qualitative results of LSI-Net.  
     </em>
@@ -25,6 +25,14 @@ Automatic polyp segmentation is a critical prerequisite for early clinical recta
 
 LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN-SEG-Easy/-Hard _Seen_) and Generalization Capabilities (`82.5/82.2` max Dice score on SUN-SEG-Easy/-Hard _Unseen_) in the VPS task, surpassing previous models by a large margin.
 
+<p align="center">
+    <img src="imgs/demo_compare.gif"/> <br />
+    <em> 
+    Figure 2: Comparable results of LSI-Net with other models.  
+    </em>
+</p>
+</div>
+</div>
 
 ## Usage
 
