@@ -32,16 +32,21 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 
 1. Install dependencies for LSI-Net.
 
+
 ```bash
 # Install dependent packages
-cd LSI-Net
 pip install -r requirements.txt
+
+# Install mmcv dependencies,
+pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
+pip install mmsegmentation
 
 # Install cuda extensions for PDFA
 cd lib/ops_align
 python setup.py build develop
 cd ../..
 ```
+Note: The version of mmcv-full to intall can follow [link](https://mmcv.readthedocs.io/en/latest/get_started/installation.html).
 
 2. Prepare the datasets for LSI-Net.
 
