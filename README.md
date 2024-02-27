@@ -6,7 +6,7 @@
 <p align="center">
     <img src="imgs/demo.gif"/> <br />
     <em> 
-    Figure 1: Qualitative results of LSI-Net.  
+    Figure 1: Qualitative visualization of the proposed LSI-Net.  
     </em>
 </p>
 
@@ -28,7 +28,7 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 <p align="center">
     <img src="imgs/demo_compare.gif"/> <br />
     <em> 
-    Figure 2: Comparable results of LSI-Net with other models.  
+    Figure 2: Performance on challenging samples compared with other methods.  
     </em>
 </p>
 </div>
