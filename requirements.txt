@@ -1,0 +1,15 @@
+tensorboardX
+future
+lmdb
+numpy
+opencv-python
+pyyaml
+requests
+torch
+torchvision
+tqdm
+yapf
+pillow
+scipy
+scikit-image
+imageio
