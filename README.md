@@ -40,7 +40,7 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 ### Preliminaries
 
 - Python 3.8+
-- PyTorch 1.9+(https://pytorch.org/)
+- PyTorch 1.9+ 
 - TorchVision corresponding to the PyTorch version
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
@@ -107,7 +107,7 @@ python test_video_mem.py
 For fair comparison, we evaluate our model through the toolbox provided by [PNS+](https://github.com/GewelsJI/VPS/tree/main/eval).
 
 ### Well trained model:
-You could download the trained model from [link](https://drive.google.com/file/d/1kgrLzseINXzLPz6ZnIW2Mcvi0t9EjRKJ/view?usp=drive_link) and put the model in directory `./snapshot`.
+You could download the trained model from this [link](https://drive.google.com/file/d/1kgrLzseINXzLPz6ZnIW2Mcvi0t9EjRKJ/view?usp=drive_link) and put the model in directory `./snapshot`.
 
 ### Pre-computed maps:
 The predition maps of LSI-Net can be downloaded via this [link](https://drive.google.com/file/d/1L1ZcSUZxTJqRPoMjUaRRFzXlXdmApSOx/view?usp=drive_link).
