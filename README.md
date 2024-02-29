@@ -39,8 +39,8 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 
 ### Preliminaries
 
-- Python >= 3.7 
-- [PyTorch >= 1.7](https://pytorch.org/)
+- Python == 3.8
+- [PyTorch == 1.9.0](https://pytorch.org/)
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 
@@ -51,18 +51,12 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 # Install dependent packages
 pip install -r requirements.txt
 
-# Install mmcv dependencies,
-pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
-pip install mmsegmentation
-
 # Install cuda extensions for PDFA
 cd lib/ops_align
 python setup.py build develop
 cd ../..
 ```
-Note: 
-- The version of mmcv-full to intall can follow [link](https://mmcv.readthedocs.io/en/latest/get_started/installation.html).
-      
+Note:   
 - More details about the cuda extensions for PDFA can be found in the work of [BasicSR](https://github.com/XPixelGroup/BasicSR)
       
 
