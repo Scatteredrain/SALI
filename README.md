@@ -39,8 +39,9 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 
 ### Preliminaries
 
-- Python == 3.8
-- [PyTorch == 1.9.0](https://pytorch.org/)
+- Python 3.8+
+- PyTorch 1.9+(https://pytorch.org/)
+- TorchVision corresponding to the PyTorch version
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 
@@ -48,7 +49,7 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 
 
 ```bash
-# Install dependent packages
+# Install other dependent packages
 pip install -r requirements.txt
 
 # Install cuda extensions for PDFA
@@ -74,20 +75,13 @@ Please refer to [PNS+](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_DESCR
   │   │   │   ├── Seen
   │   │   │   ├── Unseen
   │   │   ├── TrainDataset
-  │   │   │   ├── Classification
-  │   │   │   ├── Detection
-  │   │   │   ├── Edge
-  │   │   │   ├── Frame
-  │   │   │   ├── GT
-  │   │   │   ├── Polygon
-  │   │   │   ├── Scribble
 
   ```
 
 
 #### 3. Prepare the pre-trained weights for the backbone.
 
-The pretrained model of LSI-Net on the ??? dataset is available at [???](???)
+The pretrained weights of the image-based encoder/decoder on the SUN-SEG TrainDataset is available at [???](???)
 
 ```bash
 mkdir pretrained
@@ -110,10 +104,10 @@ python test_video_mem.py
 
 ###  Evaluating 
 
-Python: Please refer to the toolbox provided by [VPS](https://github.com/GewelsJI/VPS/tree/main/eval).
+For fair comparison, we evaluate our model through the toolbox provided by [PNS+](https://github.com/GewelsJI/VPS/tree/main/eval).
 
 ### Well trained model:
-You could download the trained model from ??? and put the model in directory `./snapshot`.
+You could download the trained model from [link](https://drive.google.com/file/d/1kgrLzseINXzLPz6ZnIW2Mcvi0t9EjRKJ/view?usp=drive_link) and put the model in directory `./snapshot`.
 
 ### Pre-computed maps:
-????
+The predition maps of LSI-Net can be downloaded via this [link](https://drive.google.com/file/d/1L1ZcSUZxTJqRPoMjUaRRFzXlXdmApSOx/view?usp=drive_link).
