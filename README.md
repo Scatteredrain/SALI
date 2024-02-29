@@ -68,7 +68,7 @@ Note:
 
 #### 2. Prepare the datasets for LSI-Net.
 
-Please refer to [PNS+](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_DESCRIPTION.md) to get access to the SUN-SEG dataset, and download it to path `datasets/`. The path structure should be as follows:
+Please refer to [PNS+](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_DESCRIPTION.md) to get access to the SUN-SEG dataset, and download it to path `./datasets`. The path structure should be as follows:
 ```none
   LSI-Net
   ├── datasets
