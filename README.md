@@ -81,7 +81,7 @@ Please refer to [PNS+](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_DESCR
 
 #### 3. Prepare the pre-trained weights for the backbone.
 
-The pretrained weights of the image-based encoder/decoder on the SUN-SEG TrainDataset is available at [???](???)
+The pre-trained weights of the image-based encoder/decoder on the SUN-SEG TrainDataset is available [here](https://drive.google.com/file/d/1U77oKKK_qik2C0fd7hSKiYG43UA25GgD/view?usp=sharing).
 
 ```bash
 mkdir pretrained
@@ -96,18 +96,21 @@ cd pretrained
 python train_video.py
 ```
 
+
 ### Testing
 
 ```bash
 python test_video_mem.py
 ```
 
+
+### Well trained model:
+You can download our [checkpoint](https://drive.google.com/file/d/1kgrLzseINXzLPz6ZnIW2Mcvi0t9EjRKJ/view?usp=drive_link) and put it in directory `./snapshot` for a quick test.
+
+
 ###  Evaluating 
 
 For fair comparison, we evaluate our model through the toolbox provided by [PNS+](https://github.com/GewelsJI/VPS/tree/main/eval).
-
-### Well trained model:
-You could download the trained model from this [link](https://drive.google.com/file/d/1kgrLzseINXzLPz6ZnIW2Mcvi0t9EjRKJ/view?usp=drive_link) and put the model in directory `./snapshot`.
 
 ### Pre-computed maps:
 The predition maps of LSI-Net can be downloaded via this [link](https://drive.google.com/file/d/1L1ZcSUZxTJqRPoMjUaRRFzXlXdmApSOx/view?usp=drive_link).
