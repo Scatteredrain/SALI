@@ -234,7 +234,7 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
    
-    parser.add_argument('--dataset_root',  type=str, default='/memory/yizhenyu/dataset/SUN/data/SUN-SEG')
+    parser.add_argument('--dataset_root',  type=str, default='./datasets/SUN-SEG')
     parser.add_argument('--trainsplit', type=str, default='TrainDataset', help='train dataset')
     parser.add_argument('--testsplit', type=str, default='TestHardDataset/Seen', help='val dataset')
     
@@ -243,18 +243,18 @@ if __name__ == '__main__':
     parser.add_argument('--decay_epoch', type=int, default=50, help='every n epochs decay learning rate')
     parser.add_argument('--epoch', type=int, default=200, help='epoch number')
     parser.add_argument('--lr', type=float, default=1e-4, help='learning rate')
-    parser.add_argument('--batchsize', type=int, default=2, help='training batch size')
+    parser.add_argument('--batchsize', type=int, default=14, help='training batch size')
     parser.add_argument('--trainsize', type=int, default=352, help='training dataset size')
 
-    parser.add_argument('--pretrained_image_model', type=str, default='./pretrained/Net_epoch_best_cod10k.pth',
+    parser.add_argument('--pretrained_image_model', type=str, default='./pretrained/image_based.pth',
                         help='path to the pretrained Swin Transformer')
     parser.add_argument('--pvtv2_pretrained_path', type=str, default=None,
-                        help='whether load pvt_v2_b5')
+                        help='path to load pvt_v2_b5')
     
     parser.add_argument('--resume', type=str, default='', help='train from checkpoints')
     parser.add_argument('--seed', type=int, default=2021, help='random seed to use. Default=123')
     
-    parser.add_argument('--mem_freq', type=int, default=10, help='mem every n frames')
+    parser.add_argument('--mem_freq', type=int, default=5, help='mem every n frames')
     parser.add_argument('--test_mem_length', type=int, default=50, help='max num of memory frames')
     
     parser.add_argument('--save_path', type=str,default='./snapshot/cascade_long2short/',
