@@ -160,58 +160,23 @@ if __name__ == '__main__':
     parser.add_argument(
         '--metric_list', type=list, help='set the evaluation metrics',
         default=['Smeasure',"meanEm","wFmeasure","meanFm","meanSen","maxDice"],
-
-        # default=['Smeasure', "meanEm", 'wFmeasure', "meanFm", 'maxDice','meanDice', "meanSen","maxSen"],
-        # default=[ "meanFm","meanSen" ],
-        # default=['Smeasure', 'maxEm','meanEm','wFmeasure', 'maxDice','meanDice','meanIoU',"meanSen", "meanSpe","meanFm"],
         choices=["Smeasure", "wFmeasure", "MAE", "adpEm", "meanEm", "maxEm", "adpFm", "meanFm", "maxFm",
                  "meanSen", "maxSen", "meanSpe", "maxSpe", "meanDice", "maxDice", "meanIoU", "maxIoU"])
-    # parser.add_argument(
-    #     '--data_lst', type=str, help='set the dataset what you wanna to test',
-    #     nargs='+', action='append',
-    #     choices=['TestEasyDataset/Seen', 'TestHardDataset/Seen', 'TestEasyDataset/Unseen', 'TestHardDataset/Unseen'])
+    parser.add_argument(
+        '--data_lst', type=str, help='set the dataset what you wanna to test',
+        nargs='+', action='append',
+        choices=['TestEasyDataset/Seen', 'TestHardDataset/Seen', 'TestEasyDataset/Unseen', 'TestHardDataset/Unseen'])
 
     parser.add_argument(
         '--pred_root', type=str, help='custom your prediction root',
-        # default='/data/yizhenyu/project/video-polyp-seg/Comparison/PraNet/results')
-        # default='/data/yizhenyu/datasets/Benchmark')
-        # default='/data/yizhenyu/project/video-polyp-seg/SLT-Net/res/longterm')
-        # default='./res/cas_long2short/')
-        # default='/memory/yizhenyu/results_map/VPS')
-        # default='/data/yizhenyu/project/video-polyp-seg/Comparison/pytorch-nested-unet/outputs')
-        # default='/data/yizhenyu/project/video-polyp-seg/Ablation/baseline_image_based/res_epoch3')
-        default = '/data/yizhenyu/project/video-polyp-seg/Ablation/ours_wo_PDFA/res')
-    # parser.add_argument(
-    #     '--model_lst', type=str,
-    #     # default=[['snapshot_download_weights']]
-    #     # default=[['2020-MICCAI-23DCNN']]
-    #     # default=[['Net_epoch_4_best/SUN-SEG']]
-    #     # default=[['SUN-SEG-SLT-Net']]
-    #     # default=[['SLT-Net']]
-    #     # default=[['FLA-Net']]
-    #     # default=[['Polyp-PVT']]
-    #     # default=[['PraNet']]
-    #     # default=[['baseline_image']]
-    #     default=[['wo_PDFA']]
-    #     )
+        default = None)
+
     parser.add_argument(
         '--model_lst', type=str, help='candidate competitors',
-        nargs='+', action='append')
-
-
-    parser.add_argument(
-        '--data_lst', type=str,
-        default= [['TestHardDataset/Seen']])
-        # default= [['TestHardDataset/Unseen','TestHardDataset/Seen']])
-        # default= [['TestHardDataset/Unseen','TestHardDataset/Seen',
-        #            'TestEasyDataset/Unseen','TestEasyDataset/Seen']])
-     
-    # parser.add_argument(
-    #     '--model_lst', type=str, help='candidate competitors',
-    #     nargs='+', action='append',
-    #     choices=['2015-MICCAI-UNet', '2018-TMI-UNet++', '2020-MICCAI-ACSNet', '2020-MICCAI-PraNet',
-    #              '2021-MICCAI-SANet', '2019-TPAMI-COSNet', '2020-AAAI-PCSA', '2020-MICCAI-23DCNN', '2020-TIP-MATNet',
-    #              '2021-ICCV-DCFNet', '2021-ICCV-FSNet', '2021-MICCAI-PNSNet', '2021-NIPS-AMD', '2022-MIR-PNSPlus'])
+        nargs='+', action='append',
+        choices=['2015-MICCAI-UNet', '2018-TMI-UNet++', '2020-MICCAI-ACSNet', '2020-MICCAI-PraNet',
+                 '2021-MICCAI-SANet', '2019-TPAMI-COSNet', '2020-AAAI-PCSA', '2020-MICCAI-23DCNN', '2020-TIP-MATNet',
+                 '2021-ICCV-DCFNet', '2021-ICCV-FSNet', '2021-MICCAI-PNSNet', '2021-NIPS-AMD', '2022-MIR-PNSPlus','LSI-Net'])
 
     parser.add_argument(
         '--txt_name', type=str, help='logging root',
@@ -225,19 +190,19 @@ if __name__ == '__main__':
     txt_save_path = './eval-result/{}/{}/'.format(opt.txt_name,opt.pred_root.split('/')[-1])
     os.makedirs(txt_save_path, exist_ok=True)
 
-    # # TODO: check the integrity of each candidates @Johnson-Chou
-    # if opt.check_integrity:
-    #     for _data_name in opt.data_lst[0]:
-    #         for _model_name in opt.model_lst[0]:
-    #             gt_pth = os.path.join(opt.gt_root, _data_name, 'GT')
-    #             pred_pth = os.path.join(opt.pred_root, _model_name, _data_name)
-    #             if not sorted(os.listdir(gt_pth)) == sorted(os.listdir(pred_pth)):
-    #                 print(len(sorted(os.listdir(gt_pth))), len(sorted(os.listdir(pred_pth))))
-    #                 print('The {} Dataset of {} Model is not matching to the ground-truth'.format(_data_name,
-    #                                                                                               _model_name))
-    #     # raise Exception('check done')
-    # else:
-    #     print('>>> Skip check the integrity of each candidates ...')
+    # TODO: check the integrity of each candidates @Johnson-Chou
+    if opt.check_integrity:
+        for _data_name in opt.data_lst[0]:
+            for _model_name in opt.model_lst[0]:
+                gt_pth = os.path.join(opt.gt_root, _data_name, 'GT')
+                pred_pth = os.path.join(opt.pred_root, _model_name, _data_name)
+                if not sorted(os.listdir(gt_pth)) == sorted(os.listdir(pred_pth)):
+                    print(len(sorted(os.listdir(gt_pth))), len(sorted(os.listdir(pred_pth))))
+                    print('The {} Dataset of {} Model is not matching to the ground-truth'.format(_data_name,
+                                                                                                  _model_name))
+        # raise Exception('check done')
+    else:
+        print('>>> Skip check the integrity of each candidates ...')
 
     # start eval engine
     eval_engine_vps(opt, txt_save_path)
