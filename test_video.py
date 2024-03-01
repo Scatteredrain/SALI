@@ -46,10 +46,9 @@ if __name__ == '__main__':
     
     test_loader = test_dataloader(opt)
     pth_path = opt.pth_path
-    save_root = './res/eval2/{}/{}/{}/'.format(pth_path.split('/')[-1][:-4],opt.dataset_root.split('/')[-1],opt.testsplit)
+    save_root = './res/{}/{}/{}'.format(pth_path.split('/')[-1][:-4],opt.dataset_root.split('/')[-1],opt.testsplit)
     # pdb.set_trace()
     os.makedirs(save_root,exist_ok=True)
-    save_path = './'+ save_root.split('/')[1] +'/' +save_root.split('/')[2] + '/' + save_root.split('/')[3]
     model = Network(opt)
     # model = torch.nn.DataParallel(model)
     print('loading from:{}'.format(pth_path))
@@ -96,9 +95,9 @@ if __name__ == '__main__':
             dice_sum += dice
 
             name =name[0].replace('jpg','png')
-            save_path_final = save_path + '/' + scene
+            save_path_final = save_root + '/' + scene
             if not os.path.exists(save_path_final):
-                    os.makedirs(save_path_final,exist_ok=True)
+                os.makedirs(save_path_final,exist_ok=True)
             imageio.imwrite(os.path.join(save_path_final,name), np.uint8(res*255))
 
     meandice = dice_sum/test_loader.size
