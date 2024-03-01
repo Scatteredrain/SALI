@@ -81,7 +81,7 @@ Please refer to [PNS+](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_DESCR
 
 #### 3. Prepare the pre-trained weights for the backbone.
 
-The pre-trained weights of the image-based encoder/decoder on the SUN-SEG TrainDataset is available [here](https://drive.google.com/file/d/1U77oKKK_qik2C0fd7hSKiYG43UA25GgD/view?usp=sharing).
+The pre-trained weights of the image-based encoder/decoder is available [here](https://drive.google.com/file/d/1U77oKKK_qik2C0fd7hSKiYG43UA25GgD/view?usp=sharing).
 
 ```bash
 mkdir pretrained
