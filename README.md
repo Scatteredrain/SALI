@@ -110,7 +110,7 @@ You can download our [checkpoint](https://drive.google.com/file/d/1sZvcWk2FFQo_6
 
 ###  Evaluating 
 
-For fair comparison, we evaluate our model through the toolbox provided by [PNS+](https://github.com/GewelsJI/VPS/tree/main/eval).
+For fair comparison, we evaluate our model through the toolbox `./eval` provided by [PNS+](https://github.com/GewelsJI/VPS/tree/main/eval).
 
 ### Pre-computed maps:
 The predition maps of LSI-Net can be downloaded via this [link](https://drive.google.com/file/d/1L1ZcSUZxTJqRPoMjUaRRFzXlXdmApSOx/view?usp=drive_link).
