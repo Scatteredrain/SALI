@@ -105,7 +105,7 @@ python test_video_mem.py
 
 
 ### Well trained model:
-You can download our [checkpoint](https://drive.google.com/file/d/1kgrLzseINXzLPz6ZnIW2Mcvi0t9EjRKJ/view?usp=drive_link) and put it in directory `./snapshot` for a quick test.
+You can download our [checkpoint](https://drive.google.com/file/d/1sZvcWk2FFQo_6c6xFORLp-NjPwrptsAH/view?usp=sharing) and put it in directory `./snapshot` for a quick test.
 
 
 ###  Evaluating 
