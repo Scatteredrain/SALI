@@ -22,7 +22,7 @@ class BasicConv2d(nn.Module):
         return x
 
 class NonLocalNet(nn.Module):
-    def __init__(self, in_planes, bn_layer=True, pyramid_type='conv'):
+    def __init__(self, in_planes, bn_layer=False, pyramid_type='conv'):
         super(NonLocalNet, self).__init__()
         self.pyramid_type = pyramid_type
         self.nl_layer1 = SRA(in_planes*2, inter_channels=None,
