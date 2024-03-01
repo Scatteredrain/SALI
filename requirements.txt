@@ -2,11 +2,10 @@ tensorboardX
 future
 lmdb
 numpy
+timm==0.5.4
 opencv-python
 pyyaml
 requests
-torch
-torchvision
 tqdm
 yapf
 pillow
