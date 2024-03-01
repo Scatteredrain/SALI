@@ -113,7 +113,7 @@ def make_cuda_ext(name, module, sources, sources_cuda=None):
         extra_compile_args=extra_compile_args)
 
 
-def get_requirements(filename='requirements.txt'):
+def get_requirements(filename='../../requirements.txt'):
     here = os.path.dirname(os.path.realpath(__file__))
     with open(os.path.join(here, filename), 'r') as f:
         requires = [line.replace('\n', '') for line in f.readlines()]
