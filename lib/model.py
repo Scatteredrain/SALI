@@ -228,8 +228,6 @@ class VideoModel(nn.Module):
 
         self.membranch = MemBranch(indim=32)
 
-        # self.ls_fusion_conv = LongShort_term_fusion(indim=32)
-
         self.freeze_bn()
 
     def load_backbone(self, pretrained):
