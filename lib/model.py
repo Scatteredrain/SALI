@@ -71,16 +71,6 @@ class PCDAlignment(nn.Module):
                 self.feat_conv[level] = nn.Conv2d(num_feat * 2, num_feat, 3, 1,
                                                   1)
 
-        # Cascading dcn
-        # self.cas_offset_conv1 = nn.Conv2d(num_feat * 2, num_feat, 3, 1, 1)
-        # self.cas_offset_conv2 = nn.Conv2d(num_feat, num_feat, 3, 1, 1)
-        # self.cas_dcnpack = DCNv2Pack(
-        #     num_feat,
-        #     num_feat,
-        #     3,
-        #     padding=1,
-        #     deformable_groups=deformable_groups)
-
         # upsamplt and relu
         self.upsample = nn.Upsample(
             scale_factor=2, mode='bilinear', align_corners=False)
@@ -128,11 +118,7 @@ class PCDAlignment(nn.Module):
                 upsampled_feat = self.upsample(feat)
 
             feature_pyramid.append(feat)
-        # Cascading
-        # offset = torch.cat([feat, ref_feat_l[0]], dim=1)
-        # offset = self.lrelu(
-        #     self.cas_offset_conv2(self.lrelu(self.cas_offset_conv1(offset))))
-        # feat = self.lrelu(self.cas_dcnpack(feat, offset))
+
         feature_pyramid=feature_pyramid[::-1]
         return feature_pyramid
 
@@ -222,8 +208,7 @@ class VideoModel(nn.Module):
 
         self.pcd_align = PCDAlignment(num_feat=32, deformable_groups=8)
 
-        # self.mem_bank = MemoryBank(test_mem_length=args.test_mem_length,num_values=3)
-        self.mem_bank = MemoryBank()
+        self.mem_bank = MemoryBank(test_mem_length=args.test_mem_length, num_values=3)
         self.first_case_gt = None
 
         self.membranch = MemBranch(indim=32)
