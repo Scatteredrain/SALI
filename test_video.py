@@ -22,10 +22,6 @@ def cofficent_calculate(pred,gts,threshold=0.5):
     iou = intersection/(union - intersection + eps)
     return (dice, iou)
 
-# cur_file_path=os.path.realpath(__file__)
-# cur_directory=os.path.dirname(cur_file_path)
-# sys.path.append(os.path.join(cur_directory, '..'))
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset_root',  type=str, default='/memory/yizhenyu/dataset/SUN/data/SUN-SEG')
 parser.add_argument('--testsplit',  type=str, default='TestHardDataset/Seen')
@@ -53,11 +49,7 @@ if __name__ == '__main__':
     # model = torch.nn.DataParallel(model)
     print('loading from:{}'.format(pth_path))
     model.load_state_dict(torch.load(pth_path,map_location='cuda:0'))
-    # pretrained_dict = torch.load(opt.pth_path)
-    # model_dict = model.state_dict()
-    # #pdb.set_trace()
-    # for k, v in pretrained_dict.items():
-    #     pdb.set_trace()
+
     if isinstance(model,torch.nn.DataParallel):
         model = model.module
     model.eval()

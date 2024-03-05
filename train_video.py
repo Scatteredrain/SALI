@@ -4,13 +4,9 @@ import logging
 import sys
 from tqdm import tqdm
 import argparse
-# sys.path.append('lib')
+
 sys.path.append('dataloaders')
-# sys.path.append('snapshot')
-# cur_file_path=os.path.realpath(__file__)
-# cur_directory=os.path.dirname(cur_file_path)
-# sys.path.append(os.path.join(cur_directory, '..'))
-# print(sys.path)
+
 import torch
 import torch.nn.functional as F
 import numpy as np
@@ -81,14 +77,6 @@ def train(train_loader, model, optimizer, epoch, save_path, writer, freq):
             # print('mem_t: ',model.mem_bank.T)
             preds = model(images, case_idx, mode='train', gt_mem=gt_mem, use_mem=True, add_mem=False)
             loss = structure_loss(preds[0], gt) + structure_loss(preds[1], gt) + structure_loss(preds[2], gt) + structure_loss(preds[3], gt) 
-    
-            ########################################
-
-            # preds1, preds2, pred = model(images)
-            # loss1 = structure_loss(preds1[0], gts) + structure_loss(preds1[1], gts) + structure_loss(preds1[2], gts) 
-            # loss2 = structure_loss(preds2[0], gts) + structure_loss(preds2[1], gts) + structure_loss(preds2[2], gts) 
-            # loss_final = structure_loss(pred, gts) + structure_loss(preds1[3], gts) + structure_loss(preds2[3], gts)
-            # loss = loss1 + loss2 + loss_final
             loss.backward()
 
             clip_gradient(optimizer, opt.clip)
@@ -121,14 +109,6 @@ def train(train_loader, model, optimizer, epoch, save_path, writer, freq):
                 res = res.sigmoid().data.cpu().numpy().squeeze()
                 res = (res - res.min()) / (res.max() - res.min() + 1e-8)
                 writer.add_image('train_Pred_final', torch.tensor(res), step, dataformats='HW')
-                # res_neibor0 = preds_neibor[-1][0].clone()
-                # res_neibor0 = res_neibor0.sigmoid().data.cpu().numpy().squeeze()
-                # res_neibor0 = (res_neibor0 - res_neibor0.min()) / (res_neibor0.max() - res_neibor0.min() + 1e-8)
-                # writer.add_image('train_Pred_neibor', torch.tensor(res_neibor0), step, dataformats='HW')
-                # res_mem0 = preds_mem[-1][0].clone()
-                # res_mem0 = res_mem0.sigmoid().data.cpu().numpy().squeeze()
-                # res_mem0 = (res_mem0 - res_mem0.min()) / (res_mem0.max() - res_mem0.min() + 1e-8)
-                # writer.add_image('train_Pred_mem', torch.tensor(res_mem0), step, dataformats='HW')
        
         
         loss_all /= epoch_step
@@ -145,7 +125,6 @@ def train(train_loader, model, optimizer, epoch, save_path, writer, freq):
         print('Save checkpoints successfully!')
         raise
 
-#######################################################################################################################
 
 def val(test_loader, model, epoch, save_path, writer, mem_freq):
     """
@@ -198,17 +177,7 @@ def val(test_loader, model, epoch, save_path, writer, mem_freq):
 
                 writer.add_image('val_GT', torch.tensor(gt), step_val, dataformats='HW')
                 writer.add_image('val_Pred_final', torch.tensor(res), step_val, dataformats='HW')
-                # if case_idx != 0:
-                #     res_neibor0 = F.upsample(res_neibor[-1], size=gt.shape, mode='bilinear', align_corners=False)
-                #     res_neibor0 = res_neibor0.sigmoid().data.cpu().numpy().squeeze()
-                #     res_neibor0 = (res_neibor0 - res_neibor0.min()) / (res_neibor0.max() - res_neibor0.min() + 1e-8)
-                #     writer.add_image('val_Pred_neibor', torch.tensor(res_neibor0), step_val, dataformats='HW')
-                #     res_mem0 = F.upsample(res_mem[-1], size=gt.shape, mode='bilinear', align_corners=False)
-                #     res_mem0 = res_mem0.sigmoid().data.cpu().numpy().squeeze()
-                #     res_mem0 = (res_mem0 - res_mem0.min()) / (res_mem0.max() - res_mem0.min() + 1e-8)
-                #     writer.add_image('val_Pred_mem', torch.tensor(res_mem0), step_val, dataformats='HW')
-            
-            
+               
 
         mae = mae_sum / test_loader.size
         dice = dice_sum / test_loader.size
@@ -315,9 +284,6 @@ if __name__ == '__main__':
         writer.add_scalar('learning_rate', cur_lr, global_step=epoch)
         if not opt.valonly:
             train(train_loader, model, optimizer, epoch, save_path, writer, freq)
-            # torch.save(model.state_dict(), save_path + 'Net_epoch_{}.pth'.format(epoch))
-        # if epoch == 1:
-        #     torch.save(model.state_dict(), save_path + 'epoch_1.pth')
         if isinstance(model,torch.nn.DataParallel):
             model = model.module
         model.cuda(0)
