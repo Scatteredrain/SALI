@@ -208,7 +208,7 @@ class VideoModel(nn.Module):
 
         self.pcd_align = PCDAlignment(num_feat=32, deformable_groups=8)
 
-        self.mem_bank = MemoryBank(test_mem_length=args.test_mem_length, num_values=3)
+        self.mem_bank = MemoryBank()
         self.first_case_gt = None
 
         self.membranch = MemBranch(indim=32)
