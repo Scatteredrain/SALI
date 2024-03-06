@@ -4,7 +4,7 @@
 
 
 <p align="center">
-    <img src="imgs/demo.gif"/> <br />
+    <img src="imgs/demo_SALI.gif"/> <br />
     <em> 
     Figure 1: Qualitative visualization of the proposed SALI.  
     </em>
