@@ -97,7 +97,7 @@ python train_video.py
 ### Testing
 
 ```bash
-python test_video_mem.py
+python test_video.py
 ```
 
 
