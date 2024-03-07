@@ -37,17 +37,12 @@ class PCDAlignment(nn.Module):
     def __init__(self, num_feat=64, deformable_groups=8):
         super(PCDAlignment, self).__init__()
 
-        # Pyramid has three levels:
-        # L3: level 3, 1/4 spatial size
-        # L2: level 2, 1/2 spatial size
-        # L1: level 1, original spatial size
         self.offset_conv1 = nn.ModuleDict()
         self.offset_conv2 = nn.ModuleDict()
         self.offset_conv3 = nn.ModuleDict()
         self.dcn_pack = nn.ModuleDict()
         self.feat_conv = nn.ModuleDict()
 
-        # Pyramids
         for i in range(3, 0, -1):
             level = f'l{i}'
             self.offset_conv1[level] = nn.Conv2d(num_feat * 2, num_feat, 3, 1,
@@ -70,8 +65,6 @@ class PCDAlignment(nn.Module):
             if i < 3:
                 self.feat_conv[level] = nn.Conv2d(num_feat * 2, num_feat, 3, 1,
                                                   1)
-
-        # upsamplt and relu
         self.upsample = nn.Upsample(
             scale_factor=2, mode='bilinear', align_corners=False)
         self.lrelu = nn.LeakyReLU(negative_slope=0.1, inplace=True)
