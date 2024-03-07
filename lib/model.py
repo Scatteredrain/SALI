@@ -253,7 +253,6 @@ class VideoModel(nn.Module):
         fmap_neibor=self.backbone.feat_net(image_neibor)  # 3*[b,32,44/22/11,44/22/11]
         fmap_mem=self.backbone.feat_net(image_mem)
 
-        ## long-term
         keyQ, valueQ = self.membranch(fmap_cur)
         keyM, valueM00= self.membranch(fmap_mem)
         maskM = []
@@ -264,7 +263,6 @@ class VideoModel(nn.Module):
 
         corr_vol_mem = self.mem_bank.match_memory(keyQ,valueQ,keyM,valueM)
 
-        ## short-term
         # align
         fmap_ref =[x.clone() for x in fmap_cur]
         falign1=self.pcd_align(corr_vol_mem,fmap_ref)
@@ -284,7 +282,6 @@ class VideoModel(nn.Module):
         fmap1=self.backbone.feat_net(image1)
         fmap2=self.backbone.feat_net(image2)  # 3*[b,32,44/22/11,44/22/11]
 
-        ## long-term ##
         # val memory read
         keyQ, valueQ = self.membranch(fmap1)
 
@@ -294,7 +291,6 @@ class VideoModel(nn.Module):
         else:
             corr_vol_mem = self.mem_bank.match_memory(keyQ,valueQ,keyM_outer=keyQ,valueM_outer=valueQ)
             
-        ## short-term ##
         # align
         falign1=self.pcd_align(corr_vol_mem,fmap1)
         falign2=self.pcd_align(fmap2,fmap1)
