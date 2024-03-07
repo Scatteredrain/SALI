@@ -59,7 +59,7 @@ class SAM(nn.Module):
 
         g_x = self.g(x).view(batch_size, self.inter_channels, -1) # g(x) -> fuse[conv] frames & downsample[maxpool]
 
-        g_x = g_x.permute(0, 2, 1)       #[1,5*5,32]
+        g_x = g_x.permute(0, 2, 1)       
         
         theta_x = x.view(batch_size, self.in_channels, -1)
         theta_x = theta_x.permute(0, 2, 1)  #[1,22*22,32*2]
@@ -69,13 +69,13 @@ class SAM(nn.Module):
         else:
             phi_x = x.view(batch_size, self.in_channels, -1)
 
-        f = torch.matmul(theta_x, phi_x)       #  [1,484,64] * [1,64,25] -> [1,22*22,5*5]
-        f_div_C = F.softmax(f, dim=-1)         #  [1,22*22,5*5] -> [1,22*22,5*5]  @softmax on uv
+        f = torch.matmul(theta_x, phi_x)       
+        f_div_C = F.softmax(f, dim=-1)         
 
-        y = torch.matmul(f_div_C, g_x)         #  [1,22*22,5*5] * [1,5*5,32]  -> [1,22*22,32]
-        y = y.permute(0, 2, 1).contiguous()    #  [1,32,22*22]
-        y = y.view(batch_size, self.inter_channels, *x.size()[2:]) #  [1,32,22,22]
-        W_y = self.W(y)                                            #  [1,32*2,22,22]
+        y = torch.matmul(f_div_C, g_x)         
+        y = y.permute(0, 2, 1).contiguous()   
+        y = y.view(batch_size, self.inter_channels, *x.size()[2:]) 
+        W_y = self.W(y)                                           
         z = W_y + x
 
         output.append(z)
