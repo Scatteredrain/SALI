@@ -22,7 +22,7 @@
 
 Colonoscopy videos provide richer information in polyp segmentation for rectal cancer diagnosis.However, the endoscope's fast moving and close-up observing make the current methods suffer from large spatial incoherence and continuous low-quality frames, and thus yield limited segmentation accuracy. In this context, we focus on robust video polyp segmentation by enhancing the adjacent feature consistency and rebuilding the reliable polyp representation. To achieve this goal, we in this paper propose SALI network, a hybrid of Short-term Alignment Module (SAM) and Long-term Interaction Module (LIM).The SAM learns spatial-aligned features of adjacent frames via deformable convolution and further harmonizes them to capture more stable short-term polyp representation. In case of low-quality frames, the LIM stores the historical polyp representations as a long-term memory bank, and explores the retrospective relations to interactively rebuild more reliable polyp features for the current segmentation. Combing SAM and LIM, the SALI network of video segmentation shows a great robustness to the spatial variations and low-visual cues.
 
-LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN-SEG-Easy/-Hard _Seen_) and Generalization Capabilities (`82.5/82.2` max Dice score on SUN-SEG-Easy/-Hard _Unseen_) in the VPS task, surpassing previous models by a large margin.
+SALI showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN-SEG-Easy/-Hard _Seen_) and Generalization Capabilities (`82.5/82.2` max Dice score on SUN-SEG-Easy/-Hard _Unseen_) in the VPS task, surpassing previous models by a large margin.
 
 <p align="center">
     <img src="imgs/demo_compare.gif"/> <br />
@@ -51,14 +51,12 @@ LSI-Net showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN
 # Install other dependent packages
 pip install -r requirements.txt
 
-# Install cuda extensions for PDFA
+# Install cuda extensions for FA
 cd lib/ops_align
 python setup.py build develop
 cd ../..
 ```
-Note:   
-- More details about the cuda extensions for PDFA can be found in the work of [BasicSR](https://github.com/XPixelGroup/BasicSR)
-      
+
 
 #### 2. Prepare the datasets for SALI.
 
@@ -109,7 +107,7 @@ You can download our [checkpoint](https://drive.google.com/file/d/1sZvcWk2FFQo_6
 
 ###  Evaluating 
 
-For fair comparison, we evaluate our model through the toolbox `./eval` provided by [PNS+](https://github.com/GewelsJI/VPS/tree/main/eval).
+For fair comparison, we evaluate all methods through the toolbox `./eval` provided by [PNS+](https://github.com/GewelsJI/VPS/tree/main/eval).
 
 ### Pre-computed maps:
 The predition maps of SALI can be downloaded via this [link](https://drive.google.com/file/d/1L1ZcSUZxTJqRPoMjUaRRFzXlXdmApSOx/view?usp=drive_link).
