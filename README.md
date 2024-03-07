@@ -6,7 +6,7 @@
 <p align="center">
     <img src="imgs/demo_SALI.gif"/> <br />
     <em> 
-    Figure 1: Qualitative visualization of the proposed SALI.  
+    Figure 1: Predictions visualization of the proposed SALI.  
     </em>
 </p>
 
