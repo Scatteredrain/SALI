@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
-from lib.pvtv2_afterTEM import Network as Encoder
-from lib.short_term import SRA
+from lib.pvtv2_afterRFB import Network as Encoder
+from lib.short_term import SAM
 from lib.DCN_Module import DCNv2Pack
 from lib.long_term import MemoryBank
 
@@ -126,11 +126,11 @@ class NonLocalNet(nn.Module):
     def __init__(self, in_planes, bn_layer=False, pyramid_type='conv'):
         super(NonLocalNet, self).__init__()
         self.pyramid_type = pyramid_type
-        self.nl_layer1 = SRA(in_planes*2, inter_channels=None,
+        self.nl_layer1 = SAM(in_planes*2, inter_channels=None,
             sub_sample=True, bn_layer=bn_layer, sub_sample_scale=2)
-        self.nl_layer2 = SRA(in_planes*2, inter_channels=None,
+        self.nl_layer2 = SAM(in_planes*2, inter_channels=None,
             sub_sample=True, bn_layer=bn_layer, sub_sample_scale=4)
-        self.nl_layer3 = SRA(in_planes*2, inter_channels=None,
+        self.nl_layer3 = SAM(in_planes*2, inter_channels=None,
             sub_sample=True, bn_layer=bn_layer, sub_sample_scale=8)
 
         self.conv1 = BasicConv2d(in_planes*2, in_planes, 3, padding=1)
