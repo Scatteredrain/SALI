@@ -2,9 +2,9 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-class SRA(nn.Module):
+class SAM(nn.Module):
     def __init__(self, in_channels, inter_channels=None, sub_sample=True, bn_layer=True, sub_sample_scale=2):
-        super(SRA, self).__init__()  #(in_channels*2, inter_channels=None,
+        super(SAM, self).__init__()  #(in_channels*2, inter_channels=None,
                                                     #  dimension=2, sub_sample=True, bn_layer=False, sub_sample_scale=2,4,8)
         
         self.sub_sample = sub_sample
