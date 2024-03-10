@@ -6,7 +6,7 @@
 <p align="center">
     <img src="imgs/a18_2.gif"/> <br />
     <em> 
-    Figure 1: Predictions visualization of the proposed SALI.  
+    Figure 1: Qualitative comparison of the polyp video-based models.  
     </em>
 </p>
 
