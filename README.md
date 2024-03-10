@@ -4,16 +4,9 @@
 
 
 <p align="center">
-    <img src="imgs/demo_SALI.gif"/> <br />
+    <img src="imgs/a18_2.gif"/> <br />
     <em> 
     Figure 1: Predictions visualization of the proposed SALI.  
-    </em>
-</p>
-
-<p align="center">
-    <img src="imgs/a18.gif"/> <br />
-    <em> 
-    Figure 2: Predictions visualization of the proposed SALI.  
     </em>
 </p>
 
