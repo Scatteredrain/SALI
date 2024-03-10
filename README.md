@@ -4,7 +4,7 @@
 
 
 <p align="center">
-    <img src="imgs/a18_2.gif"/> <br />
+    <img src="imgs/a18_3.gif"/> <br />
     <em> 
     Figure 1: Qualitative comparison of the polyp video-based models.  
     </em>
