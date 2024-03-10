@@ -10,6 +10,13 @@
     </em>
 </p>
 
+<p align="center">
+    <img src="imgs/a18.gif"/> <br />
+    <em> 
+    Figure 2: Predictions visualization of the proposed SALI.  
+    </em>
+</p>
+
 </div>
 </div>
 
