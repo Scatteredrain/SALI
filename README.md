@@ -4,7 +4,7 @@
 
 
 <p align="center">
-    <img src="imgs/a18_3.gif"/> <br />
+    <img src="imgs/a18_4.gif"/> <br />
     <em> 
     Figure 1: Qualitative comparison of the polyp video-based models.  
     </em>
@@ -23,7 +23,7 @@
 <p align="center">
     <img src="imgs/framework.png"/ width="800"> <br />
     <em> 
-    Figure 2: Overview of our proposed SALI.  
+    Figure 2: Framework of our proposed SALI.  
     </em>
 </p>
 
