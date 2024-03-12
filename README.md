@@ -1,27 +1,18 @@
 <div align="center">
-<h2>SALI</h2>
-<h4>Short-term Alignment and Long-term Interaction Network for Colonoscopy Video Polyp Segmentation</h4>
+<h1>SALI:</h1>
+<h3>Short-term Alignment and Long-term Interaction Network for Colonoscopy Video Polyp Segmentation</h3>
 <p align="center">
     <img src="imgs/output_a18.gif"/> <br />
-    <em> 
-    Figure 1: Qualitative comparison of the polyp video-based models.  
-    </em>
 </p>
 </div>
 </div>
 
-## Updates 
-
-* `[2024-03-02]` We release the initial version of SALI!
 
 
 ## Overview
 
 <p align="center">
-    <img src="imgs/framework.png"/ width="800"> <br />
-    <em> 
-    Figure 2: Framework of the proposed SALI.  
-    </em>
+    <img src="imgs/framework.png"/ width=900> <br />
 </p>
 
 Colonoscopy videos provide richer information in polyp segmentation for rectal cancer diagnosis.However, the endoscope's fast moving and close-up observing make the current methods suffer from large spatial incoherence and continuous low-quality frames, and thus yield limited segmentation accuracy. In this context, we focus on robust video polyp segmentation by enhancing the adjacent feature consistency and rebuilding the reliable polyp representation. To achieve this goal, we in this paper propose SALI network, a hybrid of Short-term Alignment Module (SAM) and Long-term Interaction Module (LIM).The SAM learns spatial-aligned features of adjacent frames via deformable convolution and further harmonizes them to capture more stable short-term polyp representation. In case of low-quality frames, the LIM stores the historical polyp representations as a long-term memory bank, and explores the retrospective relations to interactively rebuild more reliable polyp features for the current segmentation. Combing SAM and LIM, the SALI network of video segmentation shows a great robustness to the spatial variations and low-visual cues.
@@ -30,22 +21,16 @@ SALI showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN-SE
 
 ## Rusults
 
-### Quantitative results
+### - Quantitative results
 <p align="center">
-    <img src="imgs/quantitative.png"/> <br />
-    <em> 
-    Figure 2: Performance on challenging samples compared with other methods.  
-    </em>
+    <img src="imgs/quantitative.png"/ width=900> <br />
 </p>
 </div>
 </div>
 
-### Qualitative results
+### - Qualitative results
 <p align="center">
-    <img src="imgs/demo_compare.gif"/> <br />
-    <em> 
-    Figure 3: Performance on challenging samples compared with other methods.  
-    </em>
+    <img src="imgs/demo_compare.gif"/ width=900> <br />
 </p>
 </div>
 </div>
@@ -53,7 +38,7 @@ SALI showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN-SE
 ## Usage
 
 
-### Preliminaries
+### - Preliminaries
 
 - Python 3.8+
 - PyTorch 1.9+ 
@@ -104,27 +89,27 @@ cd pretrained
 ```
 
 
-### Training
+### - Training
 
 ```bash
 python train_video.py
 ```
 
 
-### Testing
+### - Testing
 
 ```bash
 python test_video.py
 ```
 
 
-### Well trained model:
+### - Well trained model:
 You can download our [checkpoint](https://drive.google.com/file/d/1sZvcWk2FFQo_6c6xFORLp-NjPwrptsAH/view?usp=sharing) and put it in directory `./snapshot` for a quick test.
 
 
-###  Evaluating 
+### - Evaluating 
 
 For fair comparison, we evaluate all methods through the toolbox `./eval` provided by [PNS+](https://github.com/GewelsJI/VPS/tree/main/eval).
 
-### Pre-computed maps:
+### - Pre-computed maps:
 The predition maps of SALI can be downloaded via this [link](https://drive.google.com/file/d/1L1ZcSUZxTJqRPoMjUaRRFzXlXdmApSOx/view?usp=drive_link).
