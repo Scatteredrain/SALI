@@ -57,9 +57,7 @@ if __name__ == '__main__':
 
     ## memory
     mem_batch_freq = opt.mem_freq  # batchsize=1
-    # compute parameters
-    print('Total Params = %.2fMB' % count_parameters_in_MB(model))
-
+    
     reses = {}
     low_res = []
     dice_sum = 0.0
