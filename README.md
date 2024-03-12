@@ -1,15 +1,12 @@
 <div align="center">
 <h2>SALI</h2>
 <h4>Short-term Alignment and Long-term Interaction Network for Colonoscopy Video Polyp Segmentation</h4>
-
-
 <p align="center">
-    <img src="imgs/a18_4.gif"/> <br />
+    <img src="imgs/output_a18.gif"/> <br />
     <em> 
     Figure 1: Qualitative comparison of the polyp video-based models.  
     </em>
 </p>
-
 </div>
 </div>
 
@@ -23,7 +20,7 @@
 <p align="center">
     <img src="imgs/framework.png"/ width="800"> <br />
     <em> 
-    Figure 2: Framework of our proposed SALI.  
+    Figure 2: Framework of the proposed SALI.  
     </em>
 </p>
 
