@@ -27,7 +27,7 @@ parser.add_argument('--dataset_root',  type=str, default='/memory/yizhenyu/datas
 parser.add_argument('--testsplit',  type=str, default='TestHardDataset/Seen')
 parser.add_argument('--testsize', type=int, default=352, help='testing size')
 parser.add_argument('--trainsize', type=int, default=352, help='training size')
-parser.add_argument('--pth_path', type=str, default='./snapshot/Net_epoch_4_best.pth')
+parser.add_argument('--pth_path', type=str, default='./snapshot/Net_epoch_8_best.pth')
 parser.add_argument('--pretrained_image_model', default=None,
                         help='path to the pretrained image model')
 parser.add_argument('--pvtv2_pretrained_path', default=None,
