@@ -85,7 +85,7 @@ The pre-trained weights is available [here](https://drive.google.com/file/d/1U77
 ```bash
 mkdir pretrained
 cd pretrained
-# download the weights with the links below.
+# download the weights with the links above.
 ```
 
 
