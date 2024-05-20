@@ -15,8 +15,13 @@
 
 ### - Stability and reliability of the features
 ### - Stability
-
+<p align="center">
+    <img src="imgs/Temporal-Stability.jpg"/ width=900> <br />
+</p>
+</div>
+</div>
 ### - Realiability
+
 <p align="center">
     <img src="imgs/Quantitative2.jpg"/ width=900> <br />
 </p>
