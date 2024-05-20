@@ -30,7 +30,7 @@
 
 - The figure below illustrates some of the  `Consecutive Low-quality Sequences` in the specific sub-test set.
 <p align="center">
-    <img src="imgs/low-quality.png"/ width=900> <br />
+    <img src="imgs/low_quality.png"/ width=900> <br />
 </p>
 </div>
 </div>
