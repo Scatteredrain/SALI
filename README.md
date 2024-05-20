@@ -22,6 +22,8 @@
 </div>
 </div>
 
+- The Consecutive Low-quality Frames test set can be downloaded [here](https://drive.google.com/file/d/14pRU5-pXX61j4p7AwS-9UgemkuXlk3pE/view?usp=sharing).
+
 ### - Qualitative results
 <p align="center">
     <img src="imgs/demo_compare.gif"/ width=900> <br />
