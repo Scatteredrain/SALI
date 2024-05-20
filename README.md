@@ -33,7 +33,7 @@
 
 
 
-## Overview
+## Methods
 
 <p align="center">
     <img src="imgs/framework.png"/ width=900> <br />
