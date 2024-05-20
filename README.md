@@ -16,12 +16,12 @@
 ### - Stability and reliability of the features
 ### - Stability
 <p align="center">
-    <img src="imgs/Temporal-Stability.jpg"/ width=900> <br />
+    <img src="imgs/Temporal-Stability.png"/ width=900> <br />
 </p>
 </div>
 </div>
-### - Realiability
 
+### - Realiability
 <p align="center">
     <img src="imgs/Quantitative2.jpg"/ width=900> <br />
 </p>
@@ -36,7 +36,7 @@
 </div>
 
 
-
+## The following parts are not related to Rebuttal!!
 ## Methods
 <p align="center">
     <img src="imgs/output_a18.gif"/> <br />
