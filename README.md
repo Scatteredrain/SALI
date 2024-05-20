@@ -1,28 +1,29 @@
 <div align="center">
 <h1>SALI</h1>
 <h3>Short-term Alignment and Long-term Interaction Network for Colonoscopy Video Polyp Segmentation</h3>
-<p align="center">
-    <img src="imgs/output_a18.gif"/> <br />
-</p>
 </div>
 </div>
 
-## Rusults
+## Experiments for Rebbuttal
 
-### - Quantitative results
+### - Backbone fairness
 <p align="center">
     <img src="imgs/Quantitative1.png"/ width=900> <br />
 </p>
 </div>
 </div>
 
+### - Stability and reliability of the features
+### - Stability
+
+### - Realiability
 <p align="center">
     <img src="imgs/Quantitative2.jpg"/ width=900> <br />
 </p>
 </div>
 </div>
 
-- The Consecutive Low-quality Frames test set can be downloaded [here](https://drive.google.com/file/d/14pRU5-pXX61j4p7AwS-9UgemkuXlk3pE/view?usp=sharing).
+- The sub-test set consisting of the `Consecutive Low-quality Sequences` from the SUN-SEG can be downloaded [here](https://drive.google.com/file/d/14pRU5-pXX61j4p7AwS-9UgemkuXlk3pE/view?usp=sharing).
 
 ### - Qualitative results
 <p align="center">
@@ -34,7 +35,9 @@
 
 
 ## Methods
-
+<p align="center">
+    <img src="imgs/output_a18.gif"/> <br />
+</p>
 <p align="center">
     <img src="imgs/framework.png"/ width=900> <br />
 </p>
