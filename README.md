@@ -16,7 +16,7 @@
 ### - Stability and reliability of the features
 ### - Stability
 <p align="center">
-    <img src="imgs/Temporal-Stability.png"/ width=900> <br />
+    <img src="imgs/temporal-stability.png"/ width=900> <br />
 </p>
 </div>
 </div>
