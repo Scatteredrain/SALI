@@ -27,10 +27,8 @@ parser.add_argument('--testsplit',  type=str, default='TestHardDataset/Seen')
 parser.add_argument('--testsize', type=int, default=352, help='testing size')
 parser.add_argument('--trainsize', type=int, default=352, help='training size')
 parser.add_argument('--pth_path', type=str, default='./snapshot/Net_epoch_8_best.pth')
-parser.add_argument('--pretrained_image_model', default=None,
-                        help='path to the pretrained image model')
-parser.add_argument('--pvtv2_pretrained_path', default=None,
-                        help='whether load pvt_v2_b5')
+parser.add_argument('--pretrained_weights', type=str, default=None,
+                        help='path to the pretrained model')
 parser.add_argument('--mem_freq', type=int, default=5, help='mem every n frames')
 opt = parser.parse_args()
 
