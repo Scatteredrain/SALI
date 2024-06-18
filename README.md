@@ -45,7 +45,7 @@ SALI showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN-SE
 </div>
 </div>
 
-- The figure below illustrates some of the  `Consecutive Low-quality Sequences` in the specific sub-test set, which can be downloaded via this [link](https://drive.google.com/file/d/14pRU5-pXX61j4p7AwS-9UgemkuXlk3pE/view?usp=sharing).
+- The figure below illustrates some of the  `Consecutive Low-quality Sequences` in the specific sub-test set.
 <p align="center">
     <img src="imgs/low_quality.png"/ width=900> <br />
 </p>
