@@ -12,3 +12,4 @@ pillow
 scipy
 scikit-image
 imageio
+thop
