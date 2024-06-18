@@ -23,17 +23,6 @@ class BasicConv2d(nn.Module):
 
 ## feature align module
 class PCDAlignment(nn.Module):
-    """Alignment module using Pyramid, Cascading and Deformable convolution
-    (PCD). It is used in EDVR.
-
-    Ref:
-        EDVR: Video Restoration with Enhanced Deformable Convolutional Networks
-
-    Args:
-        num_feat (int): Channel number of middle features. Default: 64.
-        deformable_groups (int): Deformable groups. Defaults: 8.
-    """
-
     def __init__(self, num_feat=64, deformable_groups=8):
         super(PCDAlignment, self).__init__()
 
@@ -70,19 +59,6 @@ class PCDAlignment(nn.Module):
         self.lrelu = nn.LeakyReLU(negative_slope=0.1, inplace=True)
 
     def forward(self, nbr_feat_l, ref_feat_l):
-        """Align neighboring frame features to the reference frame features.
-
-        Args:
-            nbr_feat_l (list[Tensor]): Neighboring feature list. It
-                contains three pyramid levels (L1, L2, L3),
-                each with shape (b, c, h, w).
-            ref_feat_l (list[Tensor]): Reference feature list. It
-                contains three pyramid levels (L1, L2, L3),
-                each with shape (b, c, h, w).
-
-        Returns:
-            Tensor: Aligned features.
-        """
         # Pyramids
         feature_pyramid = []
         upsampled_offset, upsampled_feat = None, None
@@ -105,8 +81,6 @@ class PCDAlignment(nn.Module):
                 feat = self.lrelu(feat)
 
             if i > 1:  # upsample offset and features
-                # x2: when we upsample the offset, we should also enlarge
-                # the magnitude.
                 upsampled_offset = self.upsample(offset) * 2
                 upsampled_feat = self.upsample(feat)
 
@@ -193,9 +167,9 @@ class VideoModel(nn.Module):
         self.extra_channels = 0
         print("Select mask mode: concat, num_mask={}".format(self.extra_channels))
 
-        self.backbone = Encoder(pvtv2_pretrained_path=args.pvtv2_pretrained_path, imgsize=self.args.trainsize)
-        if self.args.pretrained_image_model is not None:
-            self.load_backbone(self.args.pretrained_image_model)
+        self.backbone = Encoder(imgsize=self.args.trainsize)
+        if self.args.pretrained_weights is not None:
+            self.load_backbone(self.args.pretrained_weights)
 
         self.nlnet = NonLocalNet(in_planes=32, pyramid_type='conv')
 
