@@ -1,7 +1,12 @@
 <div align="center">
 <h1>SALI</h1>
 <h3>Short-term Alignment and Long-term Interaction Network for Colonoscopy Video Polyp Segmentation</h3>
-    <p align="center">
+    
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sali-short-term-alignment-and-long-term-1/video-polyp-segmentation-on-sun-seg-easy)](https://paperswithcode.com/sota/video-polyp-segmentation-on-sun-seg-easy?p=sali-short-term-alignment-and-long-term-1)
+    
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sali-short-term-alignment-and-long-term-1/video-polyp-segmentation-on-sun-seg-hard)](https://paperswithcode.com/sota/video-polyp-segmentation-on-sun-seg-hard?p=sali-short-term-alignment-and-long-term-1)
+
+<p align="center">
     <img src="imgs/output_a18.gif"/> <br />
 </p>
 </div>
