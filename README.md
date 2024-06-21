@@ -28,7 +28,7 @@ Colonoscopy videos provide richer information in polyp segmentation for rectal c
 SALI showcases formidable Learning Ability (`92.7/89.1` max Dice score on SUN-SEG-Seen-Easy/-Hard) and Generalization Capabilities (`82.5/82.2` max Dice score on SUN-SEG-Unseen-Easy/-Hard) in the VPS task, surpassing previous models by a large margin.
 
 ## Experimental Results
-### - Backbone fairness
+### - Performance
 <p align="center">
     <img src="imgs/Quantitative1.png"/ width=900> <br />
 </p>
