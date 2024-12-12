@@ -1,9 +1,17 @@
 <div align="center">
 <h1>SALI</h1>
 <h3>Short-term Alignment and Long-term Interaction Network for Colonoscopy Video Polyp Segmentation</h3>
-    
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sali-short-term-alignment-and-long-term-1/video-polyp-segmentation-on-sun-seg-easy)](https://paperswithcode.com/sota/video-polyp-segmentation-on-sun-seg-easy?p=sali-short-term-alignment-and-long-term-1)
-    
+<br>
+<a href="https://scholar.google.com/citations?user=rU2JxLIAAAAJ&hl=en">Qiang Hu</a><sup><span>1, &#42;</span></sup>, <a href="https://scholar.google.com/citations?user=yoY2un8AAAAJ&hl=en&oi=ao">Zhenyu Yi</a><sup><span>2, &#42;</span></sup>, Ying Zhou</a><sup><span>1</span></sup>, Fan Huang</a><sup><span>3</span></sup>, Mei Liu<sup><span>4</span></sup>, <a href="http://faculty.hust.edu.cn/liqiang15/zh_CN/index.htm">Qiang Li</a><sup><span>1</span></sup>, <a href="https://scholar.google.com/citations?user=LwQcmgYAAAAJ&hl=en">Zhiwei Wang</a><sup><span>1, &#8224;</span></sup>
+</br>
+
+<sup>1</sup>  WNLO, HUST, <sup>2</sup>  SES, HUST, <sup>3</sup>  UIH, <sup>4</sup> HUST Tongji Medical College
+<br>
+(<span>&#42;</span>: equal contribution, <span>&#8224;</span>: corresponding author)
+
+</div>
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sali-short-term-alignment-and-long-term-1/video-polyp-segmentation-on-sun-seg-easy)](https://paperswithcode.com/sota/video-polyp-segmentation-on-sun-seg-easy?p=sali-short-term-alignment-and-long-term-1) 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sali-short-term-alignment-and-long-term-1/video-polyp-segmentation-on-sun-seg-hard)](https://paperswithcode.com/sota/video-polyp-segmentation-on-sun-seg-hard?p=sali-short-term-alignment-and-long-term-1)
 
 <p align="center">
